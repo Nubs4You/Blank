@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "buildbotmod",
+  "version": "${version}",
+  "name": "BuildBot Mod",
+  "description": "Spawns an AI-assisted builder bot that executes large structure plans.",
+  "authors": [
+    "Codex"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.example.buildbotmod.BuildBotMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "fabric-api": "*",
+    "minecraft": "~1.21.11",
+    "java": ">=21"
+  }
+}

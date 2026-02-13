@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>buildbot-mod</artifactId>
+    <version>1.0.0</version>
+    <name>BuildBot Mod</name>
+    <description>Fabric 1.21.11 Minecraft mod that spawns a bot and builds from LLM plans.</description>
+
+    <properties>
+        <maven.compiler.release>21</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <minecraft.version>1.21.1</minecraft.version>
+        <fabric.loader.version>0.16.10</fabric.loader.version>
+        <fabric.api.version>0.114.0+1.21.1</fabric.api.version>
+        <lombok.version>1.18.34</lombok.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>fabricmc</id>
+            <url>https://maven.fabricmc.net/</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.fabricmc</groupId>
+            <artifactId>fabric-loader</artifactId>
+            <version>${fabric.loader.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.fabricmc.fabric-api</groupId>
+            <artifactId>fabric-api</artifactId>
+            <version>${fabric.api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2/</url>
+        </pluginRepository>
+    </pluginRepositories>
+<build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>${maven.compiler.release}</release>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+            
+        </plugins>
+    </build>
+</project>
